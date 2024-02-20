@@ -1,0 +1,26 @@
+1. Spring Boot Annotations:
+
+@SpringBootApplication
+@ComponentScan(basePackages = "com.pollyproject")
+@SpringBootApplication: This annotation is a combination of @Configuration, @EnableAutoConfiguration, and @ComponentScan. It is used to mark the class as a Spring Boot application class and enables auto-configuration and component scanning.
+@ComponentScan: This annotation specifies the base package(s) to scan for Spring components. Here, it's configured to scan the com.pollyproject package and its subpackages for components.
+
+
+2. @Autowired
+SynthesizeSpeechRequest synthesizeSpeechRequest;
+This annotation marks the synthesizeSpeechRequest field for automatic dependency injection by Spring. It will be initialized with a bean of type SynthesizeSpeechRequest.
+
+3. CommandLineRunner Implementation:
+the PollyClass class implements the CommandLineRunner interface, which means it has to implement the run method. This method will be executed after the application context is loaded and before the Spring Boot application starts.
+
+4.run Method:
+This method is called when the application starts. It currently calls the readFileForSynthesize method, which reads text from a file and synthesizes speech from it.
+
+5.synthesizeFromStringAndPlay Method:
+This method takes a text input, synthesizes speech using Amazon Polly, and plays the resulting audio stream.
+
+6.synthesizeAndSaveToFile Method:
+This method synthesizes speech from text using Amazon Polly and saves the audio to a file specified by outputFileName.
+
+7.readFileForSynthesize Method:
+This method reads text data from a file, initializes AWS credentials, creates an Amazon Polly client, synthesizes speech, and either plays it or saves it to a file.
